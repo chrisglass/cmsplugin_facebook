@@ -36,7 +36,7 @@ class FacebookPage(models.Model):
         return self.name
 
 class LikeBox(CMSPlugin):
-    fbpage = models.ForeignKey(FacebookPage, related_name='like_boxes', verbose_name=_("Facebook Page"))
+    pageurl = models.URLField(_("URL to like"))
     width = models.PositiveSmallIntegerField(_("Width"), default=None, null=True,
         blank=True, help_text=_("Leave empty for auto scaling"))
     height = models.PositiveSmallIntegerField(_("Height"), default=587)
@@ -58,12 +58,11 @@ class LikeBox(CMSPlugin):
     fb_default_width = 295
 
     def __unicode__(self):
-        return "LikeBox (%s)" % (self.fbpage.name)
+        return "LikeBox (%s)" % (self.pageurl)
     
     
 class LikeButton(CMSPlugin):
-    url = models.URLField(_("URL to like"), default=None, null=True, blank=True,
-        help_text=_("Leave empty to use the URL the plugin is used on"))
+    pageurl = models.URLField(_("URL to like"))
     layout = models.CharField(_("Layout Style"), choices=LAYOUT_CHOICES, default="standard", max_length=50)
     show_faces = models.BooleanField(_("Show Faces"), default=True,
         help_text=_("Show profile pictures below the like button"))
@@ -90,4 +89,4 @@ class LikeButton(CMSPlugin):
     fb_default_width = 295
 
     def __unicode__(self):
-        return "LikeBox (%s)" % (self.url)
+        return "LikeBox (%s)" % (self.pageurl)

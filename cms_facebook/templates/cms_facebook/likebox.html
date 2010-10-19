@@ -16,7 +16,7 @@
 </iframe> -->
 
 <iframe src="http://www.facebook.com/plugins/likebox.php?
-	href={% autoescape on %}{{ instance.fbpage.pageurl }}{% endautoescape %}&amp;
+	href={% autoescape on %}{{ instance.pageurl }}{% endautoescape %}&amp;
 	width={% if instance.width %}{{ instance.width }}{% else %}{{ width|default:295 }}{% endif %}&amp;
 	connections={{ instance.connections }}&amp;
 	stream={% if instance.stream %}true{% else %}false{% endif %}&amp;
