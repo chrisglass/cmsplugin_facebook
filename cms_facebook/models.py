@@ -29,6 +29,7 @@ COLOR_CHOICES = [
 
 class FacebookPage(models.Model):
     name = models.CharField(max_length=255)
+    pageurl = models.CharField(max_length=255, unique=True)
     pageid = models.CharField(max_length=32, unique=True)
 
     def __unicode__(self):

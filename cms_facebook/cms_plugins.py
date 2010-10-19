@@ -12,8 +12,9 @@ class BasePlugin(CMSPluginBase):
 
 class LikeBoxPlugin(BasePlugin):
     model = models.LikeBox
-    name = 'likebox'
-    
+    name = 'Facebook LikeBox Plugin'
+    render_template = 'cms_facebook/likebox.html'
+        
     
 class LikeButtonPlugin(BasePlugin):
     model = models.LikeButton
