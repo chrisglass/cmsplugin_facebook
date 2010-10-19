@@ -27,6 +27,12 @@ COLOR_CHOICES = [
     ('dark', _('dark')),
 ]
 
+SHARE_BUTTON_STYLES = (
+    ('button', 'Simple "share" button'),
+    ('button_count', 'Share button with count'),
+    ('box_count', 'Share button with count displayed above'),
+)
+
 class FacebookPage(models.Model):
     name = models.CharField(max_length=255)
     pageurl = models.CharField(max_length=255, unique=True)
@@ -34,6 +40,9 @@ class FacebookPage(models.Model):
 
     def __unicode__(self):
         return self.name
+
+class ShareButton(CMSPlugin):
+    style = models.CharField(max_length=12,choices=SHARE_BUTTON_STYLES)
 
 class LikeBox(CMSPlugin):
     pageurl = models.URLField(_("URL to like"))
