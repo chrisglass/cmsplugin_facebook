@@ -7,16 +7,12 @@ setup(
     version = version,
     license= 'BSD',
     description = 'Django CMS Facebook Plugins',
-    author = 'Christopher Glass, Jonas Obrist',
-    author_email = 'christopher.glass@divio.ch, jonas.obrist@divio.ch',
+    author = 'Christopher Glass',
+    author_email = 'christopher.glass@divio.ch',
     url = 'http://github.com/chrisglass/cmsplugin_facebook',
     packages = find_packages(),
-    package_data={
-        'cmsplugin_facebook': [
-            'templates/cmsplugin_facebook/*.html',
-        ]
-    },
     zip_safe=False,
+    include_package_data=True,
     classifiers = [
         'Development Status :: 4 - Beta',
         'Framework :: Django',
