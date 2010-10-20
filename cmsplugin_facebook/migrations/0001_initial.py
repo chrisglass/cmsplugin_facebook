@@ -8,17 +8,17 @@ class Migration(SchemaMigration):
 
     def forwards(self, orm):
         
-        # Adding model 'ShareButton'
-        db.create_table('cmsplugin_sharebutton', (
+        # Adding model 'FacebookShareButton'
+        db.create_table('cmsplugin_facebooksharebutton', (
             ('cmsplugin_ptr', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['cms.CMSPlugin'], unique=True, primary_key=True)),
             ('style', self.gf('django.db.models.fields.CharField')(max_length=12)),
             ('share_url', self.gf('django.db.models.fields.URLField')(max_length=200, null=True, blank=True)),
             ('button_text', self.gf('django.db.models.fields.CharField')(default=u'Share', max_length=255)),
         ))
-        db.send_create_signal('cmsplugin_facebook', ['ShareButton'])
+        db.send_create_signal('cmsplugin_facebook', ['FacebookShareButton'])
 
-        # Adding model 'LikeBox'
-        db.create_table('cmsplugin_likebox', (
+        # Adding model 'FacebookLikeBox'
+        db.create_table('cmsplugin_facebooklikebox', (
             ('cmsplugin_ptr', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['cms.CMSPlugin'], unique=True, primary_key=True)),
             ('pageurl', self.gf('django.db.models.fields.URLField')(max_length=200)),
             ('width', self.gf('django.db.models.fields.PositiveSmallIntegerField')(default=None, null=True, blank=True)),
@@ -27,10 +27,10 @@ class Migration(SchemaMigration):
             ('stream', self.gf('django.db.models.fields.BooleanField')(default=True)),
             ('header', self.gf('django.db.models.fields.BooleanField')(default=True)),
         ))
-        db.send_create_signal('cmsplugin_facebook', ['LikeBox'])
+        db.send_create_signal('cmsplugin_facebook', ['FacebookLikeBox'])
 
-        # Adding model 'LikeButton'
-        db.create_table('cmsplugin_likebutton', (
+        # Adding model 'FacebookLikeButton'
+        db.create_table('cmsplugin_facebooklikebutton', (
             ('cmsplugin_ptr', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['cms.CMSPlugin'], unique=True, primary_key=True)),
             ('pageurl', self.gf('django.db.models.fields.URLField')(max_length=200)),
             ('layout', self.gf('django.db.models.fields.CharField')(default='standard', max_length=50)),
@@ -41,19 +41,19 @@ class Migration(SchemaMigration):
             ('font', self.gf('django.db.models.fields.CharField')(default='verdana', max_length=50)),
             ('color_scheme', self.gf('django.db.models.fields.CharField')(default='light', max_length=50)),
         ))
-        db.send_create_signal('cmsplugin_facebook', ['LikeButton'])
+        db.send_create_signal('cmsplugin_facebook', ['FacebookLikeButton'])
 
 
     def backwards(self, orm):
         
-        # Deleting model 'ShareButton'
-        db.delete_table('cmsplugin_sharebutton')
+        # Deleting model 'FacebookShareButton'
+        db.delete_table('cmsplugin_facebooksharebutton')
 
-        # Deleting model 'LikeBox'
-        db.delete_table('cmsplugin_likebox')
+        # Deleting model 'FacebookLikeBox'
+        db.delete_table('cmsplugin_facebooklikebox')
 
-        # Deleting model 'LikeButton'
-        db.delete_table('cmsplugin_likebutton')
+        # Deleting model 'FacebookLikeButton'
+        db.delete_table('cmsplugin_facebooklikebutton')
 
 
     models = {
@@ -80,8 +80,8 @@ class Migration(SchemaMigration):
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'slot': ('django.db.models.fields.CharField', [], {'max_length': '50', 'db_index': 'True'})
         },
-        'cmsplugin_facebook.likebox': {
-            'Meta': {'object_name': 'LikeBox', 'db_table': "'cmsplugin_likebox'", '_ormbases': ['cms.CMSPlugin']},
+        'cmsplugin_facebook.facebooklikebox': {
+            'Meta': {'object_name': 'FacebookLikeBox', 'db_table': "'cmsplugin_facebooklikebox'", '_ormbases': ['cms.CMSPlugin']},
             'cmsplugin_ptr': ('django.db.models.fields.related.OneToOneField', [], {'to': "orm['cms.CMSPlugin']", 'unique': 'True', 'primary_key': 'True'}),
             'connections': ('django.db.models.fields.PositiveSmallIntegerField', [], {'default': '10'}),
             'header': ('django.db.models.fields.BooleanField', [], {'default': 'True'}),
@@ -90,8 +90,8 @@ class Migration(SchemaMigration):
             'stream': ('django.db.models.fields.BooleanField', [], {'default': 'True'}),
             'width': ('django.db.models.fields.PositiveSmallIntegerField', [], {'default': 'None', 'null': 'True', 'blank': 'True'})
         },
-        'cmsplugin_facebook.likebutton': {
-            'Meta': {'object_name': 'LikeButton', 'db_table': "'cmsplugin_likebutton'", '_ormbases': ['cms.CMSPlugin']},
+        'cmsplugin_facebook.facebooklikebutton': {
+            'Meta': {'object_name': 'FacebookLikeButton', 'db_table': "'cmsplugin_facebooklikebutton'", '_ormbases': ['cms.CMSPlugin']},
             'cmsplugin_ptr': ('django.db.models.fields.related.OneToOneField', [], {'to': "orm['cms.CMSPlugin']", 'unique': 'True', 'primary_key': 'True'}),
             'color_scheme': ('django.db.models.fields.CharField', [], {'default': "'light'", 'max_length': '50'}),
             'font': ('django.db.models.fields.CharField', [], {'default': "'verdana'", 'max_length': '50'}),
@@ -102,8 +102,8 @@ class Migration(SchemaMigration):
             'verb': ('django.db.models.fields.CharField', [], {'default': "'like'", 'max_length': '50'}),
             'width': ('django.db.models.fields.PositiveSmallIntegerField', [], {'default': 'None', 'null': 'True', 'blank': 'True'})
         },
-        'cmsplugin_facebook.sharebutton': {
-            'Meta': {'object_name': 'ShareButton', 'db_table': "'cmsplugin_sharebutton'", '_ormbases': ['cms.CMSPlugin']},
+        'cmsplugin_facebook.facebooksharebutton': {
+            'Meta': {'object_name': 'FacebookShareButton', 'db_table': "'cmsplugin_facebooksharebutton'", '_ormbases': ['cms.CMSPlugin']},
             'button_text': ('django.db.models.fields.CharField', [], {'default': "u'Share'", 'max_length': '255'}),
             'cmsplugin_ptr': ('django.db.models.fields.related.OneToOneField', [], {'to': "orm['cms.CMSPlugin']", 'unique': 'True', 'primary_key': 'True'}),
             'share_url': ('django.db.models.fields.URLField', [], {'max_length': '200', 'null': 'True', 'blank': 'True'}),

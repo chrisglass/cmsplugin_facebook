@@ -10,17 +10,17 @@ class BasePlugin(CMSPluginBase):
         return context
 
 class LikeBoxPlugin(BasePlugin):
-    model = models.LikeBox
+    model = models.FacebookLikeBox
     name = 'Facebook LikeBox Plugin'
     render_template = 'cmsplugin_facebook/likebox.html'
         
 class ShareButtonPlugin(BasePlugin):
-    model = models.ShareButton
+    model = models.FacebookShareButton
     name = 'Facebook "Share" button plugin'
     render_template = "cmsplugin_facebook/sharebutton.html"
 
 class LikeButtonPlugin(BasePlugin):
-    model = models.LikeButton
+    model = models.FacebookLikeButton
     name = 'Facebook Like Button Plugin'
     render_template = 'cmsplugin_facebook/likebutton.html'
     

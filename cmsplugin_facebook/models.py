@@ -34,14 +34,14 @@ SHARE_BUTTON_STYLES = (
 )
 
 
-class ShareButton(CMSPlugin):
+class FacebookShareButton(CMSPlugin):
     style = models.CharField(max_length=12,choices=SHARE_BUTTON_STYLES)
     share_url = models.URLField(_("URL to share"), help_text=_("If blank, the page where it's displayed will be used"), 
                                 null=True, blank=True)
     button_text = models.CharField(_("Button text"),help_text=_("This text will be displayed in the \"Share\" button"),
                                    max_length=255,default=_("Share"))
 
-class LikeBox(CMSPlugin):
+class FacebookLikeBox(CMSPlugin):
     pageurl = models.URLField(_("URL to like"))
     width = models.PositiveSmallIntegerField(_("Width"), default=None, null=True,
         blank=True, help_text=_("Leave empty for auto scaling"))
@@ -67,7 +67,7 @@ class LikeBox(CMSPlugin):
         return "LikeBox (%s)" % (self.pageurl)
     
     
-class LikeButton(CMSPlugin):
+class FacebookLikeButton(CMSPlugin):
     pageurl = models.URLField(_("URL to like"))
     layout = models.CharField(_("Layout Style"), choices=LAYOUT_CHOICES, default="standard", max_length=50)
     show_faces = models.BooleanField(_("Show Faces"), default=True,
