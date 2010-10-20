@@ -1,18 +1,18 @@
 from setuptools import setup, find_packages
 
-version = __import__('cms_facebook').__version__
+version = __import__('cmsplugin_facebook').__version__
 
 setup(
-    name = 'django-cms-fakebook',
+    name = 'cmsplugin_facebook',
     version = version,
     description = 'Django CMS Facebook Plugins',
-    author = 'Jonas Obrist',
-    author_email = 'jonas.obrist@divio.ch',
-    url = 'http://github.com/ojii/django-cms-facebook',
+    author = 'Jonas Obrist, Christopher Glass',
+    author_email = 'jonas.obrist@divio.ch, christopher.glass@divio.ch',
+    url = 'http://github.com/ojii/cmsplugin_facebook',
     packages = find_packages(),
     package_data={
-        'cms_facebook': [
-            'templates/cms_facebook/*.html',
+        'cmsplugin_facebook': [
+            'templates/cmsplugin_facebook/*.html',
         ]
     },
     zip_safe=False,
