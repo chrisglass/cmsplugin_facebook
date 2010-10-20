@@ -13,6 +13,8 @@ Done:
 Remaining:
 **********
 
+These widgets need the cms-developer to specify a facebook API key
+
  * Recommendations: http://developers.facebook.com/docs/reference/plugins/recommendations
  * Comments: http://developers.facebook.com/docs/reference/plugins/comments
  * Activity Feed: http://developers.facebook.com/docs/reference/plugins/activity
