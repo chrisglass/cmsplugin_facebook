@@ -1,6 +1,6 @@
 from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
-from cms_facebook import models
+from cmsplugin_facebook import models
 
 class BasePlugin(CMSPluginBase):
     name = None
