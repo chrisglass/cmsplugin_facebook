@@ -33,13 +33,6 @@ SHARE_BUTTON_STYLES = (
     ('box_count', 'Share button with count displayed above'),
 )
 
-class FacebookPage(models.Model):
-    name = models.CharField(max_length=255)
-    pageurl = models.CharField(max_length=255, unique=True)
-    pageid = models.CharField(max_length=32, unique=True)
-
-    def __unicode__(self):
-        return self.name
 
 class ShareButton(CMSPlugin):
     style = models.CharField(max_length=12,choices=SHARE_BUTTON_STYLES)
