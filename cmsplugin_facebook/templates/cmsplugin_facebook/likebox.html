@@ -1,0 +1,32 @@
+<!-- Example from Facebook website: -->
+<!-- 
+<iframe src="http://www.facebook.com/plugins/likebox.php?
+	href=http%3A%2F%2Fwww.facebook.com%2Fplatform&amp;width=292&amp;
+	colorscheme=light&amp;connections=10&amp;
+	stream=true&amp;
+	header=true&amp;
+	height=587" 
+	scrolling="no" 
+	frameborder="0" 
+	style="border:none; 
+	overflow:hidden; 
+	width:292px; 
+	height:587px;" 
+	allowTransparency="true">
+</iframe> -->
+
+<iframe src="http://www.facebook.com/plugins/likebox.php?
+	href={% autoescape on %}{{ instance.pageurl }}{% endautoescape %}&amp;
+	width={% if instance.width %}{{ instance.width }}{% else %}{{ width|default:295 }}{% endif %}&amp;
+	connections={{ instance.connections }}&amp;
+	stream={% if instance.stream %}true{% else %}false{% endif %}&amp;
+	header={% if instance.header %}true{% else %}false{% endif %}&amp;
+	height={{ instance.height }}" 
+	scrolling="no" 
+	frameborder="0" 
+	style="border:none; 
+	overflow:hidden; 
+	width:{% if instance.width %}{{ instance.width }}{% else %}{{ width|default:295 }}{% endif %}px; 
+	height:{{ instance.height }}px;" 
+	allowTransparency="true">
+</iframe>
