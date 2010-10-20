@@ -18,7 +18,7 @@ setup(
     },
     zip_safe=False,
     classifiers = [
-        'Development Status :: 4 -Beta',
+        'Development Status :: 4 - Beta',
         'Framework :: Django',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
