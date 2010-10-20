@@ -14,7 +14,7 @@ class Migration(SchemaMigration):
             ('name', self.gf('django.db.models.fields.CharField')(max_length=255)),
             ('pageid', self.gf('django.db.models.fields.CharField')(unique=True, max_length=32)),
         ))
-        db.send_create_signal('cms_facebook', ['FacebookPage'])
+        db.send_create_signal('cmsplugin_facebook', ['FacebookPage'])
 
         # Adding model 'LikeBox'
         db.create_table('cmsplugin_likebox', (
