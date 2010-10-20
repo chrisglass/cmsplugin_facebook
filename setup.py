@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 version = __import__('cmsplugin_facebook').__version__
 
 setup(
-    name = 'cmsplugin-facebook',
+    name = 'cmsplugin_facebook',
     version = version,
     description = 'Django CMS Facebook Plugins',
     author = 'Christopher Glass, Jonas Obrist',
