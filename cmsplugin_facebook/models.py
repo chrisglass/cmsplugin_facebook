@@ -47,6 +47,7 @@ class FacebookLikeBox(CMSPlugin):
         blank=True, help_text=_("Leave empty for auto scaling"))
     height = models.PositiveSmallIntegerField(_("Height"), default=587)
     connections = models.PositiveSmallIntegerField(_("Amount of Users"), default=10)
+    transparent = models.BooleanField(_("Transparent"), default=True)
     stream = models.BooleanField(_("Show stream"), default=True)
     header = models.BooleanField(_("Show header"), default=True)
     
