@@ -9,21 +9,21 @@ class BasePlugin(CMSPluginBase):
         context.update({'instance': instance, 'name': self.name})
         return context
 
-class LikeBoxPlugin(BasePlugin):
+class FacebookLikeBoxPlugin(BasePlugin):
     model = models.FacebookLikeBox
-    name = 'Facebook LikeBox Plugin'
+    name = 'Facebook Like Box Plugin'
     render_template = 'cmsplugin_facebook/likebox.html'
         
-class ShareButtonPlugin(BasePlugin):
+class FacebookShareButtonPlugin(BasePlugin):
     model = models.FacebookShareButton
     name = 'Facebook "Share" button plugin'
     render_template = "cmsplugin_facebook/sharebutton.html"
 
-class LikeButtonPlugin(BasePlugin):
+class FacebookLikeButtonPlugin(BasePlugin):
     model = models.FacebookLikeButton
     name = 'Facebook Like Button Plugin'
     render_template = 'cmsplugin_facebook/likebutton.html'
     
-plugin_pool.register_plugin(LikeBoxPlugin)
-plugin_pool.register_plugin(LikeButtonPlugin)
-plugin_pool.register_plugin(ShareButtonPlugin)
+plugin_pool.register_plugin(FacebookLikeBoxPlugin)
+plugin_pool.register_plugin(FacebookLikeButtonPlugin)
+plugin_pool.register_plugin(FacebookShareButtonPlugin)
