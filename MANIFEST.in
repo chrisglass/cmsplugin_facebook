@@ -1,0 +1,2 @@
+include README
+recursive-include cmsplugin_facebook/templates/cmsplugin_facebook *

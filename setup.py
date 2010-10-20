@@ -12,7 +12,11 @@ setup(
     url = 'http://github.com/chrisglass/cmsplugin_facebook',
     packages = find_packages(),
     zip_safe=False,
-    include_package_data=True,
+    package_data={
+        'cmsplugin_facebook': [
+            'templates/cmsplugin_facebook/*.html',
+        ]
+    },
     classifiers = [
         'Development Status :: 4 - Beta',
         'Framework :: Django',
