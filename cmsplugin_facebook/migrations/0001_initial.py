@@ -26,7 +26,7 @@ class Migration(SchemaMigration):
             ('stream', self.gf('django.db.models.fields.BooleanField')(default=True, blank=True)),
             ('header', self.gf('django.db.models.fields.BooleanField')(default=True, blank=True)),
         ))
-        db.send_create_signal('cms_facebook', ['LikeBox'])
+        db.send_create_signal('cmsplugin_facebook', ['LikeBox'])
 
 
     def backwards(self, orm):

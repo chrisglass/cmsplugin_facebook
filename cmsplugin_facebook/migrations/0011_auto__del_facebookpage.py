@@ -21,7 +21,7 @@ class Migration(SchemaMigration):
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('name', self.gf('django.db.models.fields.CharField')(max_length=255)),
         ))
-        db.send_create_signal('cms_facebook', ['FacebookPage'])
+        db.send_create_signal('cmsplugin_facebook', ['FacebookPage'])
 
 
     models = {

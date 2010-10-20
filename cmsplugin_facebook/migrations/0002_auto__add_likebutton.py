@@ -20,7 +20,7 @@ class Migration(SchemaMigration):
             ('font', self.gf('django.db.models.fields.CharField')(default='verdana', max_length=50)),
             ('color_scheme', self.gf('django.db.models.fields.CharField')(default='light', max_length=50)),
         ))
-        db.send_create_signal('cms_facebook', ['LikeButton'])
+        db.send_create_signal('cmsplugin_facebook', ['LikeButton'])
 
 
     def backwards(self, orm):

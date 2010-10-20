@@ -13,7 +13,7 @@ class Migration(SchemaMigration):
             ('cmsplugin_ptr', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['cms.CMSPlugin'], unique=True, primary_key=True)),
             ('style', self.gf('django.db.models.fields.CharField')(max_length=12)),
         ))
-        db.send_create_signal('cms_facebook', ['ShareButton'])
+        db.send_create_signal('cmsplugin_facebook', ['ShareButton'])
 
 
     def backwards(self, orm):
