@@ -96,4 +96,4 @@ class FacebookLikeButton(CMSPlugin):
     fb_default_width = 295
 
     def __unicode__(self):
-        return "LikeBox (%s)" % (self.pageurl)
+        return "LikeButton (%s)" % (self.pageurl)

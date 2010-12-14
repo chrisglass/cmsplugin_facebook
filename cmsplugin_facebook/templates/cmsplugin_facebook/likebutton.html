@@ -17,7 +17,7 @@
 <iframe src="http://www.facebook.com/plugins/like.php?
 	href={% autoescape on %}{{ instance.pageurl }}{% endautoescape %}&amp;
 	layout={% if instance.layout %}{{instance.layout}}{% endif %}&amp;
-	show_faces={% if instance.show_faces %}{{instance.show_faces}}{% endif %}&amp;
+	show_faces={{instance.show_faces}}&amp;
 	width={% if instance.width %}{{ instance.width }}{% else %}{{ width|default:295 }}&amp;{% endif %}
 	height={{ instance.height }}
 	action=like&amp;
