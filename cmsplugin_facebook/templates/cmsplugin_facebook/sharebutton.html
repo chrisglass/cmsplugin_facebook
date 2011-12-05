@@ -7,6 +7,7 @@
 	<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script> 
 	-->
 {% endcomment %}
+{% spaceless %}
     <a 
         name="fb_share" 
         type="{{ instance.style }}"  # Can be button, button_count or box_count (box_count is above, button_count is inline)
@@ -14,4 +15,6 @@
         {% if instance.share_url %}
         share_url="{{instance.share_url}}" 
         {% endif %}>{{instance.button_text}}</a>
-    <script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
+	<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
+
+{% endspaceless %}

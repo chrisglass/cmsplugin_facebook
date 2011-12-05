@@ -16,6 +16,7 @@
 	allowTransparency="true">
 </iframe> -->
 {% endcomment %}
+{% spaceless %}
 <iframe src="http://www.facebook.com/plugins/likebox.php?
 	href={% autoescape on %}{{ instance.pageurl }}{% endautoescape %}&amp;
 	width={% if instance.width %}{{ instance.width }}{% else %}{{ width|default:295 }}{% endif %}&amp;
@@ -31,3 +32,4 @@
 	height:{{ instance.height }}px;" 
 	allowTransparency="{{instance.transparent}}">
 </iframe>
+{%endspaceless%}
