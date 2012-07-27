@@ -1,6 +1,6 @@
 {% comment %}
 <!-- Example from Facebook -->
-<!-- 
+<!--
 <iframe src="http://www.facebook.com/plugins/like.php?
 	href=http%3A%2F%2Fwww.facebook.com%2Fbarackobama&amp;
 	layout=standard&amp;
@@ -8,24 +8,16 @@
 	width=450&amp;
 	action=like&amp;
 	height=80"
-	scrolling="no" 
-	frameborder="0" 
-	style="border:none; overflow:hidden; width:450px; height:80px;" 
+	scrolling="no"
+	frameborder="0"
+	style="border:none; overflow:hidden; width:450px; height:80px;"
 	allowTransparency="true">
 </iframe> -->
 {% endcomment %}
-{% spaceless%}
-<iframe src="http://www.facebook.com/plugins/like.php?
-	href={% autoescape on %}{{ instance.pageurl }}{% endautoescape %}&amp;
-	layout={% if instance.layout %}{{instance.layout}}{% endif %}&amp;
-	show_faces={{instance.show_faces}}&amp;
-	width={% if instance.width %}{{ instance.width }}{% else %}{{ width|default:295 }}&amp;{% endif %}
-	height={{ instance.height }}
-	action=like&amp;
-	colorscheme=light&amp;" 
-	scrolling="no" 
-	frameborder="0" 
-	style="border:none;overflow:hidden; width:{% if instance.width %}{{ instance.width }}{% else %}{{ width|default:295 }}{% endif %}px; height:{{ instance.height }}px;" 
-	allowTransparency="true">
+{% spaceless %}
+<iframe src="http://www.facebook.com/plugins/like.php?href={% autoescape on %}{{ instance.pageurl }}{% endautoescape %}&amp;layout={% if instance.layout %}{{instance.layout}}{% endif %}&amp;show_faces={{instance.show_faces}}&amp;width={% if instance.width %}{{ instance.width }}{% else %}{{ width|default:295 }}{% endif %}&amp;height={{ instance.height }}&amp;action=like&amp;colorscheme=light"
+		frameborder="0"
+		style="border:none;overflow:hidden; width:{% if instance.width %}{{ instance.width }}{% else %}{{ width|default:295 }}{% endif %}px; height:{{ instance.height }}px;"
+		allowTransparency="true">
 </iframe>
 {% endspaceless%}
