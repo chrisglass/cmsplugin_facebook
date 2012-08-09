@@ -16,11 +16,13 @@ class FacebookLikeBoxPlugin(BasePlugin):
     model = models.FacebookLikeBox
     name = 'Facebook Like Box Plugin'
     render_template = 'cmsplugin_facebook/likebox.html'
+    change_form_template = 'cmsplugin_facebook/likebox_change_form.html'
 
 class FacebookLikeButtonPlugin(BasePlugin):
     model = models.FacebookLikeButton
     name = 'Facebook Like Button Plugin'
     render_template = 'cmsplugin_facebook/likebutton.html'
+    change_form_template = 'cmsplugin_facebook/likebutton_change_form.html'
 
 plugin_pool.register_plugin(FacebookLikeBoxPlugin)
 plugin_pool.register_plugin(FacebookLikeButtonPlugin)
