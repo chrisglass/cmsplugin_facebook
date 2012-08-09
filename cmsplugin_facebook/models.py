@@ -27,19 +27,6 @@ COLOR_CHOICES = [
     ('dark', _('dark')),
 ]
 
-SHARE_BUTTON_STYLES = (
-    ('button', 'Simple "share" button'),
-    ('button_count', 'Share button with count'),
-    ('box_count', 'Share button with count displayed above'),
-)
-
-
-class FacebookShareButton(CMSPlugin):
-    style = models.CharField(max_length=12, choices=SHARE_BUTTON_STYLES)
-    share_url = models.URLField(_("URL to share"), help_text=_("If blank, the page where it's displayed will be used"),
-                                null=True, blank=True)
-    button_text = models.CharField(_("Button text"), help_text=_("This text will be displayed in the \"Share\" button"),
-                                   max_length=255, default=_("Share"))
 
 class FacebookLikeBox(CMSPlugin):
     pageurl = models.URLField(_("URL to like"))

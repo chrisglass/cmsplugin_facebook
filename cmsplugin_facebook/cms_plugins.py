@@ -14,11 +14,6 @@ class FacebookLikeBoxPlugin(BasePlugin):
     name = 'Facebook Like Box Plugin'
     render_template = 'cmsplugin_facebook/likebox.html'
 
-class FacebookShareButtonPlugin(BasePlugin):
-    model = models.FacebookShareButton
-    name = 'Facebook "Share" button plugin'
-    render_template = "cmsplugin_facebook/sharebutton.html"
-
 class FacebookLikeButtonPlugin(BasePlugin):
     model = models.FacebookLikeButton
     name = 'Facebook Like Button Plugin'
@@ -26,4 +21,3 @@ class FacebookLikeButtonPlugin(BasePlugin):
 
 plugin_pool.register_plugin(FacebookLikeBoxPlugin)
 plugin_pool.register_plugin(FacebookLikeButtonPlugin)
-plugin_pool.register_plugin(FacebookShareButtonPlugin)
