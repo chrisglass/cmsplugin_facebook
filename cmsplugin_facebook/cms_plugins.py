@@ -6,7 +6,10 @@ class BasePlugin(CMSPluginBase):
     name = None
 
     def render(self, context, instance, placeholder):
-        context.update({'instance': instance, 'name': self.name})
+        context.update({'instance': instance,
+                        'name': self.name,
+                        'url': instance.pageurl or \
+                               context['request'].build_absolute_uri()})
         return context
 
 class FacebookLikeBoxPlugin(BasePlugin):
