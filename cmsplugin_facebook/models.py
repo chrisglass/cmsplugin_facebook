@@ -27,19 +27,6 @@ COLOR_CHOICES = [
     ('dark', _('dark')),
 ]
 
-SHARE_BUTTON_STYLES = (
-    ('button', 'Simple "share" button'),
-    ('button_count', 'Share button with count'),
-    ('box_count', 'Share button with count displayed above'),
-)
-
-
-class FacebookShareButton(CMSPlugin):
-    style = models.CharField(max_length=12,choices=SHARE_BUTTON_STYLES)
-    share_url = models.URLField(_("URL to share"), help_text=_("If blank, the page where it's displayed will be used"), 
-                                null=True, blank=True)
-    button_text = models.CharField(_("Button text"),help_text=_("This text will be displayed in the \"Share\" button"),
-                                   max_length=255,default=_("Share"))
 
 class FacebookLikeBox(CMSPlugin):
     pageurl = models.URLField(_("URL to like"))
@@ -50,24 +37,24 @@ class FacebookLikeBox(CMSPlugin):
     transparent = models.BooleanField(_("Transparent"), default=True)
     stream = models.BooleanField(_("Show stream"), default=True)
     header = models.BooleanField(_("Show header"), default=True)
-    
+
     fb_bits = [
         'id',
         'connections',
         'stream',
         'header',
     ]
-    
+
     fb_aliases = {
-        'id': lambda r,c,i: i.fbpage.pageid,
+        'id': lambda r, c, i: i.fbpage.pageid,
     }
-    
+
     fb_default_width = 295
 
     def __unicode__(self):
         return "LikeBox (%s)" % (self.pageurl)
-    
-    
+
+
 class FacebookLikeButton(CMSPlugin):
     pageurl = models.URLField(_("URL to like"))
     layout = models.CharField(_("Layout Style"), choices=LAYOUT_CHOICES, default="standard", max_length=50)
@@ -79,7 +66,7 @@ class FacebookLikeButton(CMSPlugin):
     verb = models.CharField(_("Verb to display"), choices=VERB_CHOICES, default='like', max_length=50)
     font = models.CharField(_("Font"), choices=FONT_CHOICES, default='verdana', max_length=50)
     color_scheme = models.CharField(_("Color Scheme"), choices=COLOR_CHOICES, default='light', max_length=50)
-    
+
     fb_bits = [
         'href',
         'layout',
@@ -88,11 +75,11 @@ class FacebookLikeButton(CMSPlugin):
         'font',
         'color_scheme',
     ]
-    
+
     fb_aliases = {
-        'href': lambda r,c,i: i.url if i.url else r.build_absolute_uri(),
+        'href': lambda r, c, i: i.url if i.url else r.build_absolute_uri(),
     }
-    
+
     fb_default_width = 295
 
     def __unicode__(self):
