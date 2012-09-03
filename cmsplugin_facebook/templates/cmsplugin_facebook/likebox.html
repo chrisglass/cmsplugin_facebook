@@ -17,7 +17,7 @@
 </iframe> -->
 {% endcomment %}
 {% spaceless %}
-<iframe src="http://www.facebook.com/plugins/likebox.php?href={% autoescape on %}{{ instance.pageurl }}{% endautoescape %}&amp;width={% if instance.width %}{{ instance.width }}{% else %}{{ width|default:295 }}{% endif %}&amp;connections={{ instance.connections }}&amp;stream={% if instance.stream %}true{% else %}false{% endif %}&amp;header={% if instance.header %}true{% else %}false{% endif %}&amp;height={{ instance.height }}"
+<iframe src="http://www.facebook.com/plugins/likebox.php?href={% autoescape on %}{{ url }}{% endautoescape %}&amp;width={% if instance.width %}{{ instance.width }}{% else %}{{ width|default:295 }}{% endif %}&amp;connections={{ instance.connections }}&amp;stream={% if instance.stream %}true{% else %}false{% endif %}&amp;header={% if instance.header %}true{% else %}false{% endif %}&amp;height={{ instance.height }}"
 		scrolling="no"
 		frameborder="0"
 		style="border:none;overflow:hidden;width:{% if instance.width %}{{ instance.width }}{% else %}{{ width|default:295 }}{% endif %}px;height:{{ instance.height }}px;"
