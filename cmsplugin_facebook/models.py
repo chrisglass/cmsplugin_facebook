@@ -29,10 +29,10 @@ COLOR_CHOICES = [
 
 
 class FacebookLikeBox(CMSPlugin):
-    pageurl = models.URLField(_("URL to like"), help_text=_("If blank, the page where it's displayed will be used"),
+    pageurl = models.URLField(_("URL to like"), help_text=_("If blank, the page where it's displayed will be used."),
                                 null=True, blank=True)
     width = models.PositiveSmallIntegerField(_("Width"), default=None, null=True,
-        blank=True, help_text=_("Leave empty for auto scaling"))
+        blank=True, help_text=_("Leave empty for auto scaling."))
     height = models.PositiveSmallIntegerField(_("Height"), default=587)
     connections = models.PositiveSmallIntegerField(_("Amount of Users"), default=10)
     transparent = models.BooleanField(_("Transparent"), default=True)
@@ -57,13 +57,13 @@ class FacebookLikeBox(CMSPlugin):
 
 
 class FacebookLikeButton(CMSPlugin):
-    pageurl = models.URLField(_("URL to like"), help_text=_("If blank, the page where it's displayed will be used"),
+    pageurl = models.URLField(_("URL to like"), help_text=_("If blank, the page where it's displayed will be used."),
                                 null=True, blank=True)
     layout = models.CharField(_("Layout Style"), choices=LAYOUT_CHOICES, default="standard", max_length=50)
     show_faces = models.BooleanField(_("Show Faces"), default=True,
-        help_text=_("Show profile pictures below the like button"))
+        help_text=_("Show profile pictures below the like button."))
     width = models.PositiveSmallIntegerField(_("Width"), default=None, null=True,
-        blank=True, help_text=_("Leave empty for auto scaling"))
+        blank=True, help_text=_("Leave empty for auto scaling."))
     height = models.PositiveSmallIntegerField(_("Height"), default=80)
     verb = models.CharField(_("Verb to display"), choices=VERB_CHOICES, default='like', max_length=50)
     font = models.CharField(_("Font"), choices=FONT_CHOICES, default='verdana', max_length=50)
